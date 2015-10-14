@@ -6,4 +6,5 @@ permalinks:
 params:
   AuthorName: "Random Geeky Stuff"
 theme: "heather-hugo"
+canonifyurls: true
 
