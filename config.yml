@@ -1,0 +1,8 @@
+---
+baseurl: "http://nknu.net"
+title: "nknu.net"
+permalinks:
+  post: /:title/
+params:
+  AuthorName: "Random Geeky Stuff"
+
