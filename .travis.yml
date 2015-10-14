@@ -1,0 +1,9 @@
+language: go
+env:
+  matrix:
+  - GOPATH=$TRAVIS_BUILD_DIR/gosrc
+  global:
+install:
+- mkdir -p "$TRAVIS_BUILD_DIR/gosrc"
+- go get -v github.com/spf13/hugo
+script: $GOPATH/bin/hugo
