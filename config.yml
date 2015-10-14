@@ -2,7 +2,7 @@
 baseurl: "http://nknu.net"
 title: "nknu.net"
 permalinks:
-  post: /:title/
+  post: /:slug/
 params:
   AuthorName: "Random Geeky Stuff"
 theme: "heather-hugo"
