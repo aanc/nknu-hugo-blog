@@ -5,4 +5,5 @@ permalinks:
   post: /:title/
 params:
   AuthorName: "Random Geeky Stuff"
+theme: "heather-hugo"
 
