@@ -1,3 +1,6 @@
 [submodule "themes/heather-hugo"]
 	path = themes/heather-hugo
 	url = https://github.com/hbpasti/heather-hugo
+[submodule "themes/hugo-banality-theme"]
+	path = themes/hugo-banality-theme
+	url = https://github.com/nwknu/hugo-banality-theme
