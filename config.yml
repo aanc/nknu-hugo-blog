@@ -5,6 +5,6 @@ permalinks:
   post: /:slug/
 params:
   AuthorName: "Random Geeky Stuff"
-theme: "heather-hugo"
+theme: "hugo-banality-theme"
 canonifyurls: true
 
