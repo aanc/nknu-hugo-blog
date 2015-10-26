@@ -1,6 +1,6 @@
-Master (build+deploy): [![Build Status (master)](https://travis-ci.org/nwknu/nknu-hugo-blog.svg?branch=master)](https://travis-ci.org/nwknu/nknu-hugo-blog)
+Master (build+deploy): [![Build Status (master)](https://travis-ci.org/aanc/nknu-hugo-blog.svg?branch=master)](https://travis-ci.org/aanc/nknu-hugo-blog)
 
-Dev (build only): [![Build Status (dev)](https://travis-ci.org/nwknu/nknu-hugo-blog.svg?branch=dev)](https://travis-ci.org/nwknu/nknu-hugo-blog)
+Dev (build only): [![Build Status (dev)](https://travis-ci.org/aanc/nknu-hugo-blog.svg?branch=dev)](https://travis-ci.org/aanc/nknu-hugo-blog)
 
 # What is that project ?
 
