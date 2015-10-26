@@ -3,6 +3,7 @@ date = "2014-08-05T15:12:00"
 draft = "false"
 title = "Fixing 'screen256-color: unknown terminal type' when ssh'ing within tmux"
 slug = "fixing-screen256-color-unknown-terminal-type-when-sshing-within-tmux"
+tags = ["linux","tmux","ssh"]
 
 +++
 
@@ -18,19 +19,9 @@ However, note that this will affect all your sessions.
 If you don't want to redefine your `default-terminal` value, you can fix this only when needed by setting a different value for the `TERM` variable when you ssh to those boxes. So, instead of ssh'ing like this:
 
 	ssh adrien@my-box
-    
+
 you do that:
 
 	TERM=xterm ssh adrien@my-box
-    
-And you should not see the `'screen-256color': unknown terminal type` message anymore.
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Test ad -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="7479486209"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+And you should not see the `'screen-256color': unknown terminal type` message anymore.
