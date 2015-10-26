@@ -3,6 +3,7 @@ date = "2015-05-26T16:13:55"
 draft = "false"
 title = "How to configure Docker on Ubuntu 15.04 (workaround)"
 slug = "how-to-configure-docker-on-ubuntu-15-04"
+tags = ["ubuntu","docker","workaround","15.04","vivid"]
 
 +++
 
@@ -25,17 +26,6 @@ First thing to do is to confirm that systemd is in charge of your Docker service
 	           ├─20075 /usr/bin/docker -d -H fd://
 
 Two things are interresting in this output. The first one is that we can see that the docker daemon is launched with parameter `-H fd://`, and nothing else (in my case, it should have some DNS declared, and an insecure registry - see the `DOCKER_OPTS` line of your `/etc/default/docker` file). The second one is that the systemd configuration file which is used is `/lib/systemd/system/docker.service`.
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- In article -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="4075034603"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 Let's see what it looks like :
 

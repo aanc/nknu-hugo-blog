@@ -3,6 +3,7 @@ date = "2014-05-30T12:47:43"
 draft = "false"
 title = "Git behind a proxy"
 slug = "git-through-proxy"
+tags = ["git","proxy"]
 
 +++
 
@@ -13,11 +14,11 @@ Git honor the environment variables `http_proxy` and `https_proxy`, so one way o
 
 	http_proxy='http://proxy_host:proxy_port'
     https_proxy=$http_proxy
-    
+
 If your proxy requires authentication, you need  to specify your user/password in the URL:
 
 	http_proxy='http://username:password@proxy_host:proxy_port'
-    
+
 If you need more info about setting proxy info in your environment, check [that article I wrote about that a few month back](http://nknu.net/ubuntu-14-04-proxy-authentication-config/).
 
 #### Option 2 : Git's variable http.proxy
@@ -25,7 +26,7 @@ If you need more info about setting proxy info in your environment, check [that 
 Git also check what's in its own `http.proxy` variable, so you can set it on a per-project basis with the following command:
 
 	git config http.proxy 'http://username:password@proxy_host:proxy_port'
-    
+
 or on your global git configuration with this one:
 
 	git config --global http.proxy 'http://username:password@proxy_host:proxy_port'
@@ -44,15 +45,3 @@ You have an easy way and a hard way to work arround that.
 That basically tells git to systematically replace `git://github.com` with `https://github.com` when you call an external URL, resolving our problem.
 
 <strong>The hard way</strong> is to use corkscrew or socat to proxy your connection through the http proxy. You'll need to do that if `git://` is the only protocol your remote repository is exposing. I've never seen such a repo, so that's something I did not try, but [here is a page describing how to do it](http://gitolite.com/git-over-proxy.html#proxying-the-git-protocol).
-
-<center>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- In article -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="4075034603"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</center>

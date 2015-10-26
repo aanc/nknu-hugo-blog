@@ -3,6 +3,7 @@ date = "2015-05-01T22:56:06"
 draft = "false"
 title = "How to easily deploy your ghost blog using docker-machine and docker-compose"
 slug = "how-to-deploy-your-ghost-blog-using-docker-machine-and-docker-compose"
+tags = ["ghost","docker","compose","machine"]
 
 +++
 
@@ -15,16 +16,16 @@ Installing docker-machine on our workstation is as easy as copying the executabl
 Now that we have installed docker-machine, creating a docker host is really straightfoward :
 
 	$ docker-machine create -d virtualbox ghost
-	INFO[0000] Creating client certificate: /home/adrien/.docker/machine/certs/cert.pem 
+	INFO[0000] Creating client certificate: /home/adrien/.docker/machine/certs/cert.pem
 	INFO[0000] Creating SSH key...                          
-	INFO[0000] Image cache does not exist, creating it at /home/adrien/.docker/machine/cache... 
-	INFO[0000] No default boot2docker iso found locally, downloading the latest release... 
-	INFO[0001] Downloading latest boot2docker release to /home/adrien/.docker/machine/cache/boot2docker.iso... 
+	INFO[0000] Image cache does not exist, creating it at /home/adrien/.docker/machine/cache...
+	INFO[0000] No default boot2docker iso found locally, downloading the latest release...
+	INFO[0001] Downloading latest boot2docker release to /home/adrien/.docker/machine/cache/boot2docker.iso...
 	INFO[0050] Creating VirtualBox VM...                    
 	INFO[0058] Starting VirtualBox VM...                    
 	INFO[0059] Waiting for VM to start...                   
-	INFO[0104] "ghost" has been created and is now the active machine. 
-	INFO[0104] To point your Docker client at it, run this in your shell: eval "$(docker-machine env ghost)" 
+	INFO[0104] "ghost" has been created and is now the active machine.
+	INFO[0104] To point your Docker client at it, run this in your shell: eval "$(docker-machine env ghost)"
 
 With that output, we can be pretty confident that our machine was successfuly created, but if you need an extra confirmation you can check that the machine is indeed running in your Virtualbox Manager.
 
@@ -66,9 +67,9 @@ Docker Hub provides [an official Ghost image](https://registry.hub.docker.com/u/
 	Migrations: Creating owner
 	Migrations: Populating default settings
 	Migrations: Complete
-	Ghost is running in development... 
-	Listening on 0.0.0.0:2368 
-	Url configured as: http://localhost:2368 
+	Ghost is running in development...
+	Listening on 0.0.0.0:2368
+	Url configured as: http://localhost:2368
 	Ctrl+C to shut down
 
 That seems nice ! Ghost is running inside a container, on the machine we provisioned with docker-machine. How do access it now ? Well, we don't. As you can see in the logs, Ghost is running on `localhost:2368`, but `localhost` here does not mean our local box, but the docker container. In order to access this port, we need to tell docker that it needs to forward it somewhere we can access, and that is done with the `-P`, which forward all the ports declared in the Dockerfile to random accessible ports, or `-p <port_we_want_to_use>:<port_we_want_to_access>` which let us choose which port we want to access, and where.
