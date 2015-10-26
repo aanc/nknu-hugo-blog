@@ -3,20 +3,11 @@ date = "2014-07-16T17:19:44"
 draft = "false"
 title = "Git: setup a remote repo from a local repo"
 slug = "git-setup-a-remote-repo-from-a-local-repo"
+tags = ["git","howto"]
 
 +++
 
 Let's assume you started a new project. You're using Git for versionning, because it's easy to set it up locally, and for a few hours/days/weeks you're just happy with your local repository. However, now you need to go bigger and start sharing the code with your coworkers, or maybe want to setup a continuous integration system, or whatever else, and for that your need to create a remote repository which will act as reference for all the actors of your project.
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Test ad -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="7479486209"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 That's quite easy to do, actually. First thing you need to do is to create a *bare repository* on your remote server. The main difference between a bare repository and a classic one (like the one on your computer), is that the bare repository does not have a working copy checked out, it only have the versionning information (which is in the `.git` folder of your local repo).
 
@@ -26,7 +17,7 @@ So let's create that remote repo. Connect to your remote host using ssh, and go 
 	$ cd ~/repositories/my-project.git
     $ git init --bare .
     Initialized empty Git repository in /home/adrien/repositories/my-project.git/
-    
+
     $ ls -A
     branches  config  description  HEAD  hooks  info  objects  refs
 
@@ -35,7 +26,7 @@ That's all for the remote repository. Now we need to setup your local repo so yo
 	$ cd my-repo
     $ git add origin your-user@your-host:~/repositories/my-project.git
     $ git push origin master
-    
+
 And we are done ! Your coworker can now clone your repo from the remote host:
 
 	$ git clone your-user@your-host:~/repositories/my-project.git
