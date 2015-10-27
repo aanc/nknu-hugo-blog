@@ -3,6 +3,7 @@ date = "2014-05-14T11:22:01"
 draft = "false"
 title = "apt-get install error at run-parts zz-update-grub"
 slug = "apt-get-install-error-at-run-parts-zz-update-grub"
+tags = ["linux","debian","fix","grub"]
 
 +++
 
@@ -27,11 +28,11 @@ When you install programs using `apt-get`, post-install tasks are executed to ke
      linux-image-2.6.32-5-amd64
     E: Sub-process /usr/bin/dpkg returned an error code (1)
 
-In that case, the cause seems to be a corrupted GRUB device map, as stated in the error message. 
-This device.map file can be found in your /boot/grub folder, and is a list of device where GRUB will look for a boot configuration. 
+In that case, the cause seems to be a corrupted GRUB device map, as stated in the error message.
+This device.map file can be found in your /boot/grub folder, and is a list of device where GRUB will look for a boot configuration.
 For example, when not corrupted, mine looks like:
 
-    $ cat /boot/grub/device.map 
+    $ cat /boot/grub/device.map
     (fd0)   /dev/fd0
     (hd0)   /dev/sda
     (hd1)   /dev/sdb
