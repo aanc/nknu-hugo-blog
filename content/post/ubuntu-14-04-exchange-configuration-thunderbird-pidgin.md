@@ -3,6 +3,7 @@ date = "2014-04-23T22:49:27"
 draft = "false"
 title = "Ubuntu 14.04 Exchange configuration, with Thunderbird and Pidgin"
 slug = "ubuntu-14-04-exchange-configuration-thunderbird-pidgin"
+tags = ["linux","ubuntu","thunderbird","pidgin","howto","exchange","davmail","14.04"]
 
 +++
 
@@ -37,7 +38,7 @@ First thing we need to do is to install it. You can get it [from its official do
 
 *(Replace the version with the actual version of the file you downloaded)*
 
-Once installed, you can open it from the Dash (hit `Super` and then type "Davmail") or from the console (just type `davmail`). You can keep the default settings for everything except the "URL OWA (Exchange)" field, where you need to put your Outlook Web Access URL. 
+Once installed, you can open it from the Dash (hit `Super` and then type "Davmail") or from the console (just type `davmail`). You can keep the default settings for everything except the "URL OWA (Exchange)" field, where you need to put your Outlook Web Access URL.
 
 ><span id="find-out-owa-url"><strong>Finding out your OWA URL:</strong></span> you can ask your admin, or try to guess it with trial and error: depending on your version of Exchange it should be something like `https://<domain.net|server>/exchange` or `https://<domain.net|server>/owa`. You can find which server/domain you need to use by digging into your Outlook properties. In the latest version of Outlook, you may find this information by clicking on the "File" tab in the top left corner of the ribbon, then "Information". If it's not there and you're using Lync, you can right-click on its tray icon and select "Configuration informations", it will open a windows full of information, and if you go to the "EWS URL" line, you'll see which server you need to connect to.
 
@@ -60,7 +61,7 @@ If you're installing it only for you though, and on your local machine, you'll c
 2. Go to `File −> New -> Existing mail account ...`
 3. Fill in the name, email and password fields
 4. Click the "Manual configuration" button, and fill in the fields as follow (adapt the following values if you modified the davmail configuration):
-    * Incoming: 
+    * Incoming:
         * Type: IMAP
         * Server: localhost
         * Port: 1143
@@ -162,7 +163,7 @@ Launch pidgin, and go to `Account -> Manage -> Add ...`, and fill in the fields 
     * Encryption: TSL-DSK
 * Tab "Proxy":
 	* Type: No proxy
-    
+
 Save and connect, you should see your contact list appear.
 
 <strong>Note:</strong> in all my boxes (on Lubuntu 13.10 and Ubuntu 14.04), I've never managed to have pidgin work without setting the `NSS_SSL_CBC_RANDOM_IV` environment variable to 0. Without this variable, I always got a "<strong>Read Error</strong>" at connection.

@@ -3,6 +3,7 @@ date = "2014-04-08T13:19:07"
 draft = "false"
 title = "Gain root permission inside VI with sudo"
 slug = "gain-root-permission-inside-vi"
+tags = ["vi","linux"]
 
 +++
 

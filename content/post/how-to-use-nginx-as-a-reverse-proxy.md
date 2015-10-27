@@ -3,6 +3,7 @@ date = "2013-10-16T11:19:55"
 draft = "false"
 title = "How to use nginx as a reverse proxy"
 slug = "how-to-use-nginx-as-a-reverse-proxy"
+tags = ["nginx"]
 
 +++
 

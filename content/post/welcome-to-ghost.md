@@ -3,6 +3,7 @@ date = "2013-10-16T10:20:52"
 draft = "false"
 title = "Welcome to Ghost"
 slug = "welcome-to-ghost"
+tags = ["ghost","blog"]
 
 +++
 
@@ -53,7 +54,7 @@ Got a streak of geek? We've got you covered there, too. You can write inline `<c
         width: 100%;
     }
 
-### Ready for a Break? 
+### Ready for a Break?
 
 Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.
 

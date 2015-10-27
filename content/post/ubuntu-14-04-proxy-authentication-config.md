@@ -3,6 +3,7 @@ date = "2014-04-16T21:05:11"
 draft = "false"
 title = "Ubuntu 14.04 proxy config with authentication"
 slug = "ubuntu-14-04-proxy-authentication-config"
+tags = ["ubuntu","14.04","proxy","howto","linux"]
 
 +++
 
@@ -50,13 +51,13 @@ Create a `.proxy` file in your home directory. Have it only read/write-able by y
 
 	touch ~/.proxy
     chmod 600 ~/.proxy
-    
+
 Open it with your favorite text editor and add the following content, replacing `username`, `password`, `proxy_hostname` and `proxy_port` by their actual values:
 
 	# Proxy config
 	export http_proxy='username:password@http://proxy_hostname:proxy_port'
 	export no_proxy=’localhost,127.0.0.1,.mycompany.lan’
-	
+
 	export https_proxy=$http_proxy
 	export HTTP_PROXY=$http_proxy
 	export HTTPS_PROXY=$http_proxy
@@ -71,7 +72,7 @@ Edit your `~/.profile` file and add the following lines, which will load the con
 	if [ -f $HOME/.proxy ]; then
 	    . $HOME/.proxy
 	fi
-    
+
 Log out and log back in, and your proxy settings should be taken into account.
 
 Note that APT does not respect this setup. In order to have it use your proxy, you will have to edit the `/etc/apt/apt.conf` file (create it if it does not exist) and add the following line:

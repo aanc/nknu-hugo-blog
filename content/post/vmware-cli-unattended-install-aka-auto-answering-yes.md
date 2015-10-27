@@ -3,6 +3,7 @@ date = "2014-04-07T14:42:17"
 draft = "false"
 title = "VMware CLI unattended install, aka auto-answering 'yes'"
 slug = "vmware-cli-unattended-install-aka-auto-answering-yes"
+tags = ["vmware","linux","automation"]
 
 +++
 
