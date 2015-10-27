@@ -16,15 +16,6 @@ A lot of companies are using Microsoft's Exchange for their communications, with
     * [Address book](#address-book)
 3. [Replacing Lync with Pidgin](#pidgin)
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- In article -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="4075034603"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 ### <span id="davmail">Davmail: the bridge between two worlds</span>
 
@@ -127,16 +118,6 @@ If your company is using LDAP for the address book, you can configure Thunderbir
 
 Once done, you can enable the address auto-completion when writing message in Thunderbird's preferences window (`Edit -> Preferences`): in the "Composition" tab, check "Directory Server" then select the address book you just added.
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- In article -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="4075034603"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 ### <span id="pidgin">Replacing Lync with pidgin</span>
 
 In order to have instant messenging available on our linux box, we're going to use pidgin, with the pidgin-sipe plugin (to enable Exchange capabilities), and optionnaly pidgin-libnotify (to have a better integration into our Ubuntu 14.04).
@@ -175,13 +156,3 @@ To set this variable, edit your ~/.profile file and add the following:
 You will have to logout/login for this parameter to take effect.
 
 And that's it ! Let me know in the comments if something does not work, of if you have a better method. Thanks for reading!
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- In article -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="4075034603"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>

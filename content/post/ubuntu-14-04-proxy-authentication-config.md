@@ -17,16 +17,6 @@ You have several options to work arround that.
 
 > <strong>Note:</strong> Some applications don't respect the settings defined by those methods. In that case, you'll have to refer to their documentation to configure the proxy.
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Test ad -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="7479486209"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 ### 1. The apt-get/click'ish way
 
 Install the package `dconf-editor` (using the Ubuntu Software Center or simply typing `sudo apt-get install dconf-editor` in your terminal), and open it (hit `alt-F2` then type `dconf-editor`).
@@ -82,16 +72,6 @@ Note that APT does not respect this setup. In order to have it use your proxy, y
 <strong>Optionnal step</strong>: if you want your proxy setting to be propagated when you're using sudo, open the sudo config file with `sudo visudo` and add the following line after the other `Defaults` lines:
 
 	Defaults    env_keep += "http_proxy https_proxy no_proxy"
-    
+
 
 I hope it helped !
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- In article -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:468px;height:60px"
-     data-ad-client="ca-pub-9470959665799736"
-     data-ad-slot="4075034603"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
