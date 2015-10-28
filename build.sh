@@ -1,7 +1,5 @@
 #!/bin/bash
 
-staticSiteRepo="http://github.com/aanc/aanc.github.io.git"
-
 deploy() {
 	echo
 	echo "--> Deploying to $staticSiteRepo ..."
@@ -14,16 +12,18 @@ deploy() {
 		commitMessage="Travis build #${TRAVIS_BUILD_NUMBER}"
 	fi
 
+	set -e
 	git status
 	git add .
 	git commit -m "${commitMessage}"
-	git push origin master
+	git push --force "https://$GH_TOKEN@github.com/$targetSlug" master
+	set +e
 }
 
 build() {
 	echo
 	echo "--> Cloning existing site from $staticSiteRepo ..."
-	git clone $staticSiteRepo public/
+	git clone http://github.com/$targetSlug public/
 
 	echo
 	echo "--> Building ..."
@@ -38,6 +38,9 @@ clean() {
 
 [[ $1 == deploy ]] && DO_DEPLOY=yup
 
+echo
+env
+echo
 clean
 build
 if [[ $TRAVIS_PULL_REQUEST == false && $TRAVIS_BRANCH == master ]] || [[ -n $DO_DEPLOY ]]; then
