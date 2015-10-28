@@ -1,10 +1,9 @@
 ---
-baseurl: "http://nknu.net"
+baseurl: "https://aanc.github.io"
 title: "nknu.net"
 permalinks:
   post: /:slug/
 params:
-  AuthorName: "Random Geeky Stuff"
+  AuthorName: "Embrace your inner Geek"
 theme: "hugo-banality-theme"
 canonifyurls: true
-
