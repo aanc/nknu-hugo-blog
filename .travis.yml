@@ -3,7 +3,8 @@ env:
   matrix:
   - GOPATH=$TRAVIS_BUILD_DIR/gosrc
   global:
+    secure: KKQWOPFo4FTHcSC2abxIBnqxj6FbOm3G7zRkiQ09xC3Z82AXBLoVVDEFHWugxoZnKs1Ie4rOOadfMkG8PFxaUYrP8HKcBedIFl4MAIotN1jYOmI/bRHRoO1kHtJ4LegiVXlUsqb3o7Uo4K9PnXddehW3ua8o+562Wr0xxeVmWjYgF4zaI1mhQKr9aDoGWrWqd2W32vCFF0tOSYjFAwlu3xwVYi3CvopvNXuYJHB/r4wPbMX2y3TgB5WIe03fU9cFW7Wj3dQQY1VC4TeH+Y8LKGN9/ZsTXgYf2q8XxjMpQlh+jvTzwIyqUiMw6hkP6y7nvFDmql7lQ9gauyJkLt2pwfPm8jjRMh2TBdtl2EB/KNrLoDt2vZQDTsly/Db1BdhIykc+gMNIk3SQOqF7BerFHfaGvk3d4WZ8iV339WGX7WGqA+MUg/HNjMbUWYzF+gFjGvWa5CeZOR0dBv/32tUpfq1YLfvQkkAgi71BJAdGIgpSNnDeX9w9d/LoL9DwPEXpAEQc1bUBwusGsK9C548105upFaSaX6eRTI5Rp48RaP0LO86IPe+YBIb0dWuSE0xury9M3xnAzYCBtwgYk/vv31EM4h7PvFFVRRrp3lCqJpCULYWNNBau02vtBxjg2YZ5abw8ipL97gkQcDxZ3GyFjnL0Osv8K79Tx7JvAaTmQIk=
 install:
 - mkdir -p "$TRAVIS_BUILD_DIR/gosrc"
 - go get -v github.com/spf13/hugo
-script: ./build.sh
+script: "./build.sh"
