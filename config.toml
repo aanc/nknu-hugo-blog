@@ -1,0 +1,12 @@
+baseurl = "https://aanc.github.io"
+title = "nknu.net"
+theme = "hugo-banality-theme"
+canonifyurls = "true"
+
+[permalinks]
+  post = "/:slug/"
+
+[params]
+  description = "Embrace your inner Geek"
+  author = "Adrien Anceau"
+  gravatar = "6aa71c9070f3d5bb0497d429af71411e"

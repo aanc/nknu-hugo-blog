@@ -1,9 +1,0 @@
----
-baseurl: "https://aanc.github.io"
-title: "nknu.net"
-permalinks:
-  post: /:slug/
-params:
-  AuthorName: "Embrace your inner Geek"
-theme: "hugo-banality-theme"
-canonifyurls: true
