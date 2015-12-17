@@ -9,4 +9,9 @@ canonifyurls = "true"
 [params]
   description = "Embrace your inner Geek"
   author = "Adrien Anceau"
-  gravatar = "6aa71c9070f3d5bb0497d429af71411e"
+  bio = "Geek, gamer, photography enthusiast, passionate about technology, automation and food."
+  gravatar = "0cadf2f30a2d888cc46b5497292f8ff5"
+
+  disqus = ""
+  twitter = "aaadrieeen"
+  facebook = ""
