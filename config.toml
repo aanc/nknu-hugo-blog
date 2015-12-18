@@ -16,3 +16,5 @@ canonifyurls = "true"
   twitter = "aaadrieeen"
   facebook = "adrien.anceau"
   github = "aanc"
+
+  googleAnalytics = "UA-44976115-1"
