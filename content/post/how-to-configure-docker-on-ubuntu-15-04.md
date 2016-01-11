@@ -58,7 +58,7 @@ Now, we can create our config override file in that folder :
 
 containing the follwing lines:
 
-	$ [Service]
+    [Service]
     # workaround to include default options
     EnvironmentFile=/etc/default/docker
     ExecStart=
