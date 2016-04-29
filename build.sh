@@ -21,6 +21,8 @@ deploy() {
 }
 
 build() {
+	echo "--> Hugo version:"
+	$GOPATH/bin/hugo version
 	echo
 	echo "--> Cloning existing site from $staticSiteRepo ..."
 	git clone http://github.com/$targetSlug public/
