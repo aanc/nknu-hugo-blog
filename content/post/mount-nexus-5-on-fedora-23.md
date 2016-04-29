@@ -14,12 +14,13 @@ However, if for some reason you want to mount the phone using `simple-mtpfs`, yo
 - Install `simple-mtpfs`
 
 ```
-dnf install simple-mtpfs
+$ dnf install simple-mtpfs
 ```
 
 **Note** : you also need the packages `fuse fuse-libs libmtp`, but chances are that they are already installed on your system.
 
 - Connect your device (in my case, a LG Nexus 5), and do a `dmesg | tail` :
+
 ```
 [ 4158.530224] usb 4-1.7.2: new high-speed USB device number 4 using ehci-pci
 [ 4158.616409] usb 4-1.7.2: New USB device found, idVendor=18d1, idProduct=4ee1
@@ -32,6 +33,7 @@ dnf install simple-mtpfs
 Write down the `idVendor` and `idProduct` values.
 
 - create file `/etc/udev/rules.d/10-phone.rules`
+
 ```
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}="4ee1", SYMLINK="nexus5"
 ```
@@ -39,26 +41,28 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}="4ee1", SYMLINK="nexus
 **Note:** Make sure to replace the `ATTR{idVendor}` and `ATTR{idProduct}` values with the one you got from the `dmesg | tail` command, and the `SYMLINK` value with whatever you want - it will be the name of the symbolic link udev will create in your `/dev` folder, pointing to your device.
 
 - reload udev rules :
+
 ```
-  $ sudo udevadm control --reload-rules
+$ sudo udevadm control --reload-rules
 ```
 
 - unplug/replug your device. You should now have a file in `/dev` named as requested in the udev rules file created earlier.
+
 ```
-  $ ls -l /dev/nexus5
-  lrwxrwxrwx. 1 root root 15 Jan 12 10:44 /dev/nexus5 -> bus/usb/004/005
+$ ls -l /dev/nexus5
+lrwxrwxrwx. 1 root root 15 Jan 12 10:44 /dev/nexus5 -> bus/usb/004/005
 ```
+
 - Make sure the phone is in MTP mode. You can check that directly on the phone, on your notification area, you should have a notification saying "USB for file transfers" (or something similar). If you have "USB for charging", tap on the notification, and on the poping menu select "USB for file transfers (MTP)".
 
-![](/content/images/2016/mount-android-phone-on-fedora-using-simplemtp/phone-mtp-config.png)
-
 - Mount the phone
-```
-  $ simple-mtpfs /dev/nexus5 /tmp/test
-  $ ls /tmp/test
 
-  Alarms    cinegroup          Documents      Movies         panoramas      Ringtones   vervewireless
-  ...
+```
+$ simple-mtpfs /dev/nexus5 /tmp/test
+$ ls /tmp/test
+
+Alarms    cinegroup          Documents      Movies         panoramas      Ringtones   vervewireless
+...
 ```
 
 Et voilà!
