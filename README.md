@@ -1,10 +1,10 @@
-Master (build+deploy): [![Build Status (master)](https://travis-ci.org/aanc/nknu-hugo-blog.svg?branch=master)](https://travis-ci.org/aanc/nknu-hugo-blog)
+# What
 
-Dev (build only): [![Build Status (dev)](https://travis-ci.org/aanc/nknu-hugo-blog.svg?branch=dev)](https://travis-ci.org/aanc/nknu-hugo-blog)
+This repository hosts the source of my blog (http://nknu.net). This is a static site generated with [Hugo](https://www.gohugo.io) and hosted as a GitHub user page. The build is handled by [Travis](https://travis-ci.org/).
 
-# What is that project ?
+# Builds status
 
-This repository hosts the source of my blog (http://nknu.net), which is built
-by Travis using Hugo (or will be, as atm i'm migrating it from Ghost to Hugo),
-and hosted as a GitHub user page (or, again, will be when i'm done migrating).
-
+| Branch | Action | Status
+| ------ | ------ | ------
+| Master | Build & deploy |  [![Build Status (master)](https://travis-ci.org/aanc/nknu-hugo-blog.svg?branch=master)](https://travis-ci.org/aanc/nknu-hugo-blog)
+| Dev | Build only |  [![Build Status (dev)](https://travis-ci.org/aanc/nknu-hugo-blog.svg?branch=dev)](https://travis-ci.org/aanc/nknu-hugo-blog)
