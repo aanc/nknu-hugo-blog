@@ -3,6 +3,7 @@ date = "2016-10-27T14:45:39"
 draft = "false"
 title = "Fix virtualbox Linux guest boot blackscreen after kernel upgrade"
 slug = "fix-vbox-linux-guest-boot-blackscreen-after-kernel-upgrade"
+tags = ["linux","virtualbox","fedora","fix","kernel"]
 
 +++
 
