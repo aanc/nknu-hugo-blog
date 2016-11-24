@@ -1,5 +1,5 @@
 +++
-date = "2016-10-10-T12:30:23"
+date = "2016-10-10T12:30:23"
 draft = "true"
 title = "How to easily scale your Jenkins cluster with Docker Compose"
 slug = "easily-scale-jenkins-cluser-with-docker-compose"
@@ -27,7 +27,7 @@ Create a `docker-compose.yml` file containing the following:
 	    ports:
 	      - "8080:8080"
 	      - "50000:50000"
-	
+
 	volumes:
 	  jenkins_home:{}
 
@@ -50,7 +50,7 @@ For this exemple we will create an agent based on the `centos:7` docker image, b
 Create a `Dockerfile` with the following content:
 
 	FROM centos:7
-	
+
 	RUN yum install -y epel-release
 	RUN yum install -y \
 	        aria2 \
@@ -62,7 +62,7 @@ Create a `Dockerfile` with the following content:
 	        wget \
 	        which \
 	        && wget https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/2.2/swarm-client-2.2-jar-with-dependencies.jar -O /root/swarm-client.jar
-	
+
 	ENTRYPOINT ["/usr/bin/java", "-jar", "/root/swarm-client.jar"]
 
 Now build it with `docker build -t local/jenkins-centos7-slave .`.
