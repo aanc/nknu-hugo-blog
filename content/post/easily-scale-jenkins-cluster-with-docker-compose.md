@@ -9,9 +9,14 @@ tags = ["linux","docker","compose","jenkins","howto"]
 
 Jenkins is a wonderful tool.
 Its original purpose was to do continuous integration of code, but now it has grown into something that can automate and orchestrate almost everything.
-With more and more tasks handled by Jenkins, we need to allocate more an more ressources to its cluster.
+With more and more tasks handled by Jenkins, the need to allocate more resources for it arise.
+Luckily, Jenkins can work with remote agents (formerly called slaves), to move the load of builds on other hosts.
+Its pretty easy to add an agent to Jenkins, and there are [plenty](http://stackoverflow.com/questions/24962504/adding-a-slave-to-jenkins#25450561) of [guides](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines) out there explaining how to do it.
+But they involve quite a few manual steps.
+What if we want to easily add and remove slave to our cluster, with one single command ?
+It require a bit of preparation, but with the help of [Docker](https://www.docker.com/), [Compose](https://docs.docker.com/compose/) and [Jenkins Swarm Client from Jenkins Swarm Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Swarm+Plugin), its easily doable AND it can evolve to a fully automated solution (we will cover that in a future article).
 
-== Setup a Jenkins master
+### Setup a Jenkins master
 
 Note: if you already have a Jenkins master running, you can skip this step.
 
@@ -33,18 +38,19 @@ Create a `docker-compose.yml` file containing the following:
 
 Start your Jenkins master with the command `docker-compose up -d`, and browse to `http://your-docker-host:8080` to do the initial Jenkins setup.
 
-Note: there is a security step during the setup that ask you to copy/paste the content of a file on the master.
-You can use `docker-compose exec jenkins_master cat /var/jenkins_home/secrets/initialAdminPassword` to get it.
+> **Note:** there is a security step during the setup that ask you to copy/paste the content of a file on the master.
+> You can use `docker-compose exec jenkins_master cat /var/jenkins_home/secrets/initialAdminPassword` to get it.
 
-== Create a dedicated user in Jenkins Administration, with enough rights to add agents
+### Create a dedicated user in Jenkins Administration, with enough rights to add agents
 
 Go to Jenkins' Administration page and create a new user called "agent", with the following permissions:
-- Agent: build, configure, connect, create, delete, disconnect
-- Global: read
+
+* **Agent:** build, configure, connect, create, delete, disconnect
+* **Global:** read
 
 This is the user our future agents will use to register themselves to the Jenkins master.
 
-== Create the Jenkins Agent image(s) that fit your needs
+### Create the Jenkins Agent image(s) that fit your needs
 
 For this exemple we will create an agent based on the `centos:7` docker image, but we can use any image as base, as long as we put java8 and the jenkins swarm client in it.
 Create a `Dockerfile` with the following content:
@@ -67,9 +73,9 @@ Create a `Dockerfile` with the following content:
 
 Now build it with `docker build -t local/jenkins-centos7-slave .`.
 
-Note: we could also ask Docker Compose to manage the image for us, by declaring the Dockerfile in the compose file, but I prefer not to.
+> **Note:** we could also ask Docker Compose to manage the image for us, by declaring the Dockerfile in the compose file, its a matter of personnal preference.
 
-== Declare the agent in the `docker-compose.yml` file
+### Declare the agent in the `docker-compose.yml` file
 
 Add the service to your `docker-compose.yml` file:
 
