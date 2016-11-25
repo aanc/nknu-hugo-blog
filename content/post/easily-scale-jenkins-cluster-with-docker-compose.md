@@ -1,6 +1,6 @@
 +++
 date = "2016-10-10T12:30:23"
-draft = "true"
+draft = "false"
 title = "How to easily scale your Jenkins cluster with Docker Compose"
 slug = "easily-scale-jenkins-cluser-with-docker-compose"
 tags = ["linux","docker","compose","jenkins","howto"]
